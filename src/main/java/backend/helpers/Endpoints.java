@@ -6,6 +6,9 @@ public class Endpoints {
         public static String findPetById(Integer id) {
             return "v2/pet/" + id;
         }
+        public static String findPetByStatus() {
+            return "v2/pet/findByStatus";
+        }
     }
 
     public static class Post {

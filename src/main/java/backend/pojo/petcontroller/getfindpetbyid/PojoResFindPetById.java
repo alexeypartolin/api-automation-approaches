@@ -13,7 +13,7 @@ import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PojoResFindPetById {
-    private Integer id;
+    private Long id;
     private String name;
     private String status;
     private List<Object> photoUrls; // Массив строк

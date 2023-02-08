@@ -13,6 +13,6 @@ import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Category {
-    Integer id;
+    Long id;
     String name;
 }

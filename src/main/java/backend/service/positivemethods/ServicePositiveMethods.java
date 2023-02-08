@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import org.hamcrest.core.AnyOf;
 
 import java.util.List;
+import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.anyOf;
@@ -68,6 +69,16 @@ public class ServicePositiveMethods {
                 .post(endpoint)
                 .then()
                 .extract().body().jsonPath().getObject(jsonPath, pojoClass);
+    }
+
+    @Step("GET {endpoint}")
+    public static <T> List<T> getToListPojoJsonPathData(String endpoint, Class<T> pojoClass, Map<String, String> params) {
+        return given()
+                .queryParams(params)
+                .get(endpoint)
+                .then()
+                .extract().body().jsonPath().getList("", pojoClass);
+
     }
 
 }

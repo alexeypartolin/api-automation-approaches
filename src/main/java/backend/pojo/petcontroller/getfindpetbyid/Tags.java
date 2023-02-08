@@ -11,6 +11,6 @@ import lombok.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Tags {
-    Integer id;
+    Long id;
     String name;
 }
