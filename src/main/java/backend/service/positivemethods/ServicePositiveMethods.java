@@ -97,5 +97,14 @@ public class ServicePositiveMethods {
                 .extract().body().as(pojoClass);
     }
 
+    @Step("DELETE {endpoint}")
+    public static Response deleteResponse(String endpoint) {
+        return given()
+                .delete(endpoint)
+                .then()
+                .statusCode(200)
+                .extract().response();
+    }
+
 
 }

@@ -20,4 +20,10 @@ public class Endpoints {
     public static class Put {
         public static String putUpdateAnExistingPet() {return "v2/pet"; }
     }
+
+    public static class Delete {
+        public static String deleteAnExistingPet(Integer id) {
+            return "v2/pet/" + id;
+        }
+    }
 }

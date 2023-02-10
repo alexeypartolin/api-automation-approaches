@@ -75,10 +75,11 @@ public class PetshopTests {
         var responseBody5 = PositiveMethods.Put.putUpdateAnExistingPet("sold");
         Assertions.assertThat(responseBody5.getStatus()).isEqualTo("sold");
 
-        //
+        // 6 Вариант (Delete Service Method + assert in class)
 
-
-
+        var actualResult6 = PositiveMethods.Delete.deletePetById((int)Context.petId);
+        Assertions.assertThat(actualResult6).isEqualTo(Context.petId.toString());
+        System.out.println();
     }
 
 

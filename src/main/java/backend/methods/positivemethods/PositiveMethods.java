@@ -130,4 +130,14 @@ public class PositiveMethods {
             return responseBody;
         }
     }
+
+    public static class Delete {
+        public static Object deletePetById(Integer petId) {
+            var endpoint = Endpoints.Delete.deleteAnExistingPet(petId);
+            var responseBody = ServicePositiveMethods.deleteResponse(endpoint);
+            var serializedResponseBody = responseBody.jsonPath().get("message");
+
+            return serializedResponseBody;
+        }
+    }
 }
