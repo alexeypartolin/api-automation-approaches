@@ -16,4 +16,8 @@ public class Endpoints {
             return "v2/pet";
         }
     }
+
+    public static class Put {
+        public static String putUpdateAnExistingPet() {return "v2/pet"; }
+    }
 }

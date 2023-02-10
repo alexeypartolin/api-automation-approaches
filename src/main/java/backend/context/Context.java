@@ -1,5 +1,5 @@
 package backend.context;
 
 public class Context {
-    public static Long petId;
+    public static Object petId;
 }

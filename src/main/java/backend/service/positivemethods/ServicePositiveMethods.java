@@ -1,9 +1,7 @@
 package backend.service.positivemethods;
 
 import io.qameta.allure.Step;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import org.hamcrest.core.AnyOf;
 
 import java.util.List;
 import java.util.Map;
@@ -77,8 +75,27 @@ public class ServicePositiveMethods {
                 .queryParams(params)
                 .get(endpoint)
                 .then()
-                .extract().body().jsonPath().getList("", pojoClass);
-
+                .extract().body().jsonPath().getList(".", pojoClass);
     }
+
+    // Обновление данных существующего Pet
+    @Step("POST {endpoint}")
+    public static <T> T postToPojoJsonPath(String endpoint, Object body, String jsonPath, Class<T> pojoClass) {
+        return given()
+                .body(body)
+                .put(endpoint)
+                .then()
+                .extract().body().jsonPath().getObject(jsonPath, pojoClass);
+    }
+
+    @Step("PUT {endpoint}")
+    public static <T> T putToPojo(String endpoint, Object body, Class<T> pojoClass) {
+        return given()
+                .body(body)
+                .put(endpoint)
+                .then()
+                .extract().body().as(pojoClass);
+    }
+
 
 }
