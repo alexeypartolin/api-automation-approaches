@@ -17,8 +17,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.request;
 public class PetshopTests {
     @BeforeAll
     public static void beforeAll() {
@@ -26,8 +24,8 @@ public class PetshopTests {
     }
 
     @Test
-    @DisplayName("Коллекция GET-тестов с разными подходами")
-    public void CollectionOfDifferentGetTests() {
+    @DisplayName("Коллекция API тестов с разными подходами")
+    public void CollectionOfDifferentApiTests() {
 
         // Ниже представлены разные методы написания АТ (GET) на примере простых тестов
 
@@ -81,6 +79,4 @@ public class PetshopTests {
         Assertions.assertThat(actualResult6).isEqualTo(Context.petId.toString());
         System.out.println();
     }
-
-
 }
